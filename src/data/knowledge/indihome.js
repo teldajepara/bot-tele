@@ -1,7 +1,8 @@
+const path = require('path');
+
 const indihome = {
     keywords: ["indihome", "wifi rumah", "indihome residensial"],
-    image: "https://assets.telkomsel.com/public/2025-08/IH-Cara-Cepat-Pasang-Wi-Fi-IndiHome-dari-MyTelkomsel.jpg?VersionId=mUlRjRNsZgCFkrVrjzTHyZyoazSZYyMm",
-    // Konten Menu Utama (Pengertian Umum)
+    image: path.join(__dirname, "../../assets/images/indihome.jpg"),
     answer: `
 *IndiHome (Residensial/Rumah)*
 
@@ -13,7 +14,6 @@ Layanan internet ultra-cepat menggunakan teknologi fiber optik untuk kebutuhan k
 • Pilihan paket fleksibel sesuai kebutuhan
 • Akses hiburan lengkap (Streaming, Games, TV)
 `,
-    // Konten Menu "Lihat Paket" (Penjelasan Jenis Paket)
     package_intro: `
 *Pilihan Jenis Paket IndiHome*
 
@@ -26,7 +26,6 @@ Bundling internet cepat + langganan Netflix resmi. Lebih hemat & praktis!
 3️⃣ *Paket IndiHome Dynamic (2P/3P)*
 Bundling Internet WiFi + Kuota Keluarga Telkomsel dalam satu tagihan.
 `,
-    // Konten Syarat & Ketentuan
     terms: `
 *Syarat & Ketentuan*
 

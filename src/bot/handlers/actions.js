@@ -4,6 +4,7 @@ const {
     findKnowledge,
 } = require("../../services/knowledgeService");
 const indihomeData = require("../../data/knowledge/indihome");
+const indibizData = require("../../data/knowledge/indibiz");
 
 // Helper: Send text or photo (clearing previous message if needed)
 const replyWithMediaOrText = async (ctx, content, buttons, image = null) => {
@@ -11,8 +12,9 @@ const replyWithMediaOrText = async (ctx, content, buttons, image = null) => {
         // If image is provided, delete previous message and send new photo message
         if (image) {
             await ctx.deleteMessage().catch(() => { }); // Delete previous text menu
+            const media = image.startsWith("http") ? { url: image } : { source: image };
             await ctx.replyWithPhoto(
-                { url: image },
+                media,
                 {
                     caption: content,
                     parse_mode: "Markdown",
@@ -142,10 +144,82 @@ const showIndihomePackageDetail = async (ctx, key) => {
     await replyWithMediaOrText(ctx, pkg.detail, buttons, null);
 };
 
+/**
+ * INDIBIZ HANDLERS
+ */
+
+// 1. Menu Utama IndiBiz
+const showIndibizMenu = async (ctx) => {
+    await ctx.answerCbQuery();
+    const buttons = [
+        [Markup.button.callback("Lihat Pilihan Paket", "btn_ib_packages")],
+        [Markup.button.callback("Syarat & Ketentuan", "btn_ib_terms")],
+        [Markup.button.callback("⬅ Kembali ke Menu", "btn_back")],
+    ];
+
+    await replyWithMediaOrText(
+        ctx,
+        indibizData.answer,
+        buttons,
+        indibizData.image
+    );
+};
+
+// 2. Menu Pilihan Paket IndiBiz
+const showIndibizPackageTypes = async (ctx) => {
+    await ctx.answerCbQuery();
+    const buttons = [
+        [
+            Markup.button.callback(
+                indibizData.packages.basic.name,
+                "btn_ib_basic"
+            ),
+        ],
+        [
+            Markup.button.callback(
+                indibizData.packages.business.name,
+                "btn_ib_business"
+            ),
+        ],
+        [Markup.button.callback("⬅ Kembali ke IndiBiz", "btn_indibiz")],
+    ];
+
+    await replyWithMediaOrText(
+        ctx,
+        indibizData.package_intro,
+        buttons,
+        null
+    );
+};
+
+// 3. Menu Syarat & Ketentuan IndiBiz
+const showIndibizTerms = async (ctx) => {
+    await ctx.answerCbQuery();
+    const buttons = [
+        [Markup.button.callback("⬅ Kembali ke IndiBiz", "btn_indibiz")],
+    ];
+
+    await replyWithMediaOrText(ctx, indibizData.terms, buttons, null);
+};
+
+// 4. Detail Paket IndiBiz
+const showIndibizPackageDetail = async (ctx, key) => {
+    const pkg = indibizData.packages[key];
+    if (!pkg) return ctx.answerCbQuery("Paket tidak ditemukan");
+
+    await ctx.answerCbQuery();
+    const buttons = [
+        [Markup.button.callback("⬅ Pilihan Paket", "btn_ib_packages")],
+        [Markup.button.callback("Menu Utama", "btn_back")],
+    ];
+
+    await replyWithMediaOrText(ctx, pkg.detail, buttons, null);
+};
+
 module.exports = (bot) => {
     // Action Handlers (Main Menu)
     bot.action("btn_indihome", (ctx) => showIndihomeMenu(ctx));
-    bot.action("btn_indibiz", (ctx) => handleProduct(ctx, "indibiz"));
+    bot.action("btn_indibiz", (ctx) => showIndibizMenu(ctx));
     bot.action("btn_pijar", (ctx) => handleProduct(ctx, "pijar"));
 
     // IndiHome Submenus
@@ -161,6 +235,18 @@ module.exports = (bot) => {
     );
     bot.action("btn_ih_dynamic", (ctx) =>
         showIndihomePackageDetail(ctx, "dynamic")
+    );
+
+    // IndiBiz Submenus
+    bot.action("btn_ib_packages", (ctx) => showIndibizPackageTypes(ctx));
+    bot.action("btn_ib_terms", (ctx) => showIndibizTerms(ctx));
+
+    // IndiBiz Package Details
+    bot.action("btn_ib_basic", (ctx) =>
+        showIndibizPackageDetail(ctx, "basic")
+    );
+    bot.action("btn_ib_business", (ctx) =>
+        showIndibizPackageDetail(ctx, "business")
     );
 
     // Back Button (Main Menu)
