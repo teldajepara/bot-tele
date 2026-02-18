@@ -84,7 +84,7 @@ Layanan pesan massal (broadcast) untuk kebutuhan marketing dan notifikasi.
 • *Catatan:* Belum termasuk biaya per pesan (SMS/WhatsApp) sesuai tarif yang berlaku.
 `
         },
-        chatbot: {
+        ai: {
             name: "OCA Chatbot (AI)",
             slug: "oca_ai",
             detail: `
@@ -100,6 +100,23 @@ Solusi bot otomatis untuk menjawab pertanyaan berulang (FAQ) secara instan.
 *Estimasi Harga:*
 • Umumnya ditambahkan sebagai *add-on* pada OCA Interaction
 • Harga menyesuaikan kompleksitas alur bot.
+`
+        },
+        breach_checker: {
+            name: "OCA Breach Checker",
+            slug: "oca_breach",
+            detail: `
+*OCA Breach Checker*
+
+Layanan keamanan untuk mendeteksi apakah data perusahaan atau pelanggan (seperti email/nomor telepon) telah bocor di internet (data breach).
+
+*Fitur:*
+• Pengecekan kebocoran data secara berkala
+• Notifikasi jika ditemukan kebocoran baru
+• Laporan detail sumber kebocoran
+
+*Estimasi Harga:*
+• Hubungi sales untuk penawaran harga khusus.
 `
         }
     }
