@@ -5,8 +5,6 @@ const oca = require("./knowledge/oca");
 const netmonk = require("./knowledge/netmonk");
 const eazy = require("./knowledge/eazy");
 
-const faq = require("./knowledge/faq");
-
 const knowledge = [
   indihome,
   indibiz,
@@ -14,7 +12,6 @@ const knowledge = [
   oca,
   netmonk,
   eazy,
-  faq,
 ];
 
 module.exports = knowledge;
