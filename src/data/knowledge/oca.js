@@ -4,8 +4,8 @@ const oca = {
     keywords: [
         "oca",
         "omni communication assistant",
-        "oca interaction",
-        "oca blast",
+        "oca interaction lite",
+        "oca blast lite",
         "oca whatsapp api",
         "oca breach checker"
     ],
@@ -20,7 +20,7 @@ Solusi Omnichannel dari Telkom Indonesia untuk mengelola pesan pelanggan (WhatsA
 1. *OCA Interaction Lite*
 Satu dashboard untuk mengelola semua chat pelanggan (Multi-channel & Multi-agent) secara responsif.
 
-2. *OCA Blast*
+2. *OCA Blast Lite*
 Kirim pesan massal (broadcast) promosi atau notifikasi ke ribuan kontak sekaligus via WhatsApp, SMS, dan Email.
 
 3. *OCA Breaker (Breach Checker)*
@@ -28,7 +28,7 @@ Layanan keamanan data untuk mendeteksi dan mencegah kebocoran informasi perusaha
 `,
     packages: {
         interaction: {
-            name: "OCA Interaction",
+            name: "OCA Interaction Lite",
             slug: "oca_interaction",
             image: path.join(__dirname, "../../assets/images/oca_interaction_lite.png"),
             pricing_image: path.join(__dirname, "../../assets/images/oca_interaction_lite_price.png"),
@@ -71,13 +71,59 @@ _Biaya Pasang Baru (PSB) untuk Layanan Indibiz add-on sebesar Rp0._
 3. Registrasi paket dilakukan melalui SC One, NCX EBIS, Landing Page Creator EBIS, web myIndibiz.co.id, myIndibiz Partner, dan LPC (IFB) EBIS.
 4. Setiap komponen paket (kecuali perangkat) tidak dapat dilakukan order terpisah (ala carte), hanya berlaku dalam penawaran paket bundling.
 5. NDE: Strategi Go To Market (GTM) Layanan Indibiz 2S (Netmonk atau OCA) dan Layanan Indibiz add-on. C. Tel. 152/UM 000/COP-G0200000/2023. 14 Juli 2023.
+`,
+            comparison: `
+*Perbandingan Paket OCA Interaction*
+
+*1. Interaction Lite*
+Paket ini ditujukan untuk UMKM seperti online shop, bimbel, atau koperasi.
+• *Harga mulai:* Rp108.000,-
+• *Lisensi agen:* 1 lisensi
+• *Metode pembelian:* Bundling dengan layanan Indibiz
+• *Integrasi channel:* Terbatas (Facebook, Instagram, TikTok Seller)
+• *AI Assistant:* Sudah termasuk
+• *Ticketing system:* Tersedia sebagai add-on
+• *Labeling:* 5 label (bisa ditambah via add-on)
+
+*2. Interaction Lite+*
+Ditujukan untuk perusahaan menengah (Medium Enterprise) yang butuh fleksibilitas lebih.
+• *Harga mulai:* Rp600.000,-
+• *Lisensi agen:* Unlimited +1
+• *Metode pembelian:* Melalui NCX
+• *Integrasi channel:* Menengah (termasuk WhatsApp & Telegram)
+• *AI Assistant:* Sudah termasuk
+• *Ticketing system:* Tersedia sebagai add-on
+• *Labeling:* Unlimited
+
+*3. Interaction (Standar)*
+Dirancang untuk perusahaan besar dan instansi pemerintahan.
+• *Harga mulai:* Rp1.399.000,-
+• *Lisensi agen:* Unlimited +1
+• *Metode pembelian:* Melalui NCX
+• *Integrasi channel:* Lengkap (termasuk Call & Email)
+• *AI Assistant:* Sudah termasuk
+• *Ticketing system:* Sudah termasuk
+• *Labeling:* Unlimited
+
+*Poin Perbedaan Utama*
+1. *Model Pembelian*
+• Interaction Lite hanya bisa dibeli bundling dengan Indibiz.
+• Interaction Lite+ dan Interaction Standar dibeli melalui NCX.
+
+2. *Kelola Kontak & Laporan*
+• Semua paket memiliki Omnichannel Inbox dan Agent Performance Report.
+• Interaction Lite hanya menyediakan Activity Report.
+• Paket standar memiliki laporan yang lebih lengkap, termasuk Ticketing, Chatbot, dan Survey Report.
+
+3. *Fitur Tambahan (Add-On)*
+Paket Interaction Lite bisa ditingkatkan dengan add-on seperti Unlimited Social Media, Unlimited Label, dan Ticketing System. Biaya add-on berkisar Rp91.000 – Rp353.000 per bulan.
 `
         },
         blast: {
-            name: "OCA Blast",
+            name: "OCA Blast Lite",
             slug: "oca_blast",
             detail: `
-*OCA Blast*
+*OCA Blast Lite*
 
 Layanan pesan massal (broadcast) untuk kebutuhan marketing dan notifikasi.
 

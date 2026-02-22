@@ -12,7 +12,8 @@ const {
     showOcaTerms,
     showOcaPackageDetail,
     showOcaPackageFeatures,
-    showOcaPackagePricing
+    showOcaPackagePricing,
+    showOcaPackageComparison
 } = require("./products/oca");
 
 const {
@@ -59,6 +60,7 @@ module.exports = (bot) => {
     bot.action("btn_oca_interaction", (ctx) => showOcaPackageDetail(ctx, "interaction"));
     bot.action("btn_oca_feat_interaction", (ctx) => showOcaPackageFeatures(ctx, "interaction"));
     bot.action("btn_oca_price_interaction", (ctx) => showOcaPackagePricing(ctx, "interaction"));
+    bot.action("btn_oca_compare_interaction", (ctx) => showOcaPackageComparison(ctx, "interaction"));
     bot.action("btn_oca_blast", (ctx) => showOcaPackageDetail(ctx, "blast"));
     bot.action("btn_oca_breach", (ctx) => showOcaPackageDetail(ctx, "breach_checker"));
 
