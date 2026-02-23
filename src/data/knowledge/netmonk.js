@@ -8,30 +8,29 @@ const netmonk = {
         "monitoring jaringan",
         "network monitoring",
         "monitoring server",
-        "web monitoring"
+        "web monitoring",
+        "hsi telkom",
+        "monitoring ftth"
     ],
-    image: path.join(__dirname, "../../assets/images/netmonk.jpg"),
+    image: path.join(__dirname, "../../assets/images/netmonk/netmonk.jpg"),
     answer: `
 *Netmonk*
 
-Solusi monitoring infrastruktur IT berbasis di Indonesia yang membantu bisnis memantau kesehatan jaringan, server, dan aplikasi secara real-time melalui satu dashboard terintegrasi.
+Aplikasi monitoring infrastruktur IT terintegrasi yang memantau kesehatan jaringan, server, dan aplikasi secara real-time dalam satu dashboard untuk meningkatkan efektivitas dan efisiensi operasional bisnis Anda.
 
-Netmonk memberikan notifikasi proaktif sebelum gangguan terjadi, sehingga tim IT dapat melakukan penanganan lebih cepat untuk menjaga kelangsungan operasional bisnis.
+*Layanan Utama:*
+
+1. *Netmonk Prime*
+Solusi monitoring all-in-one untuk jaringan (SNMP), server, dan API/Web dalam satu platform.
+
+2. *Netmonk Hi*
+Aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan laporan performa SLA dari layanan broadband/FTTH (High Speed Internet) Telkom.
 `,
 
     package_intro: `
 *Produk Utama Netmonk*
 
 Berikut adalah varian produk monitoring dari Netmonk:
-
-1️⃣ *Netmonk Prime*
-Solusi monitoring all-in-one untuk jaringan (SNMP), server, dan API/Web dalam satu platform.
-
-2️⃣ *Netmonk Hi*
-Monitoring koneksi internet broadband yang dikhususkan untuk pengguna layanan internet bisnis (seperti Indibiz).
-
-3️⃣ *Netmonk Service*
-Layanan kustomisasi dan managed service untuk kebutuhan monitoring skala enterprise yang kompleks.
 `,
     terms: `
 *Informasi Harga & Berlangganan Netmonk*
@@ -42,55 +41,47 @@ Harga Netmonk menggunakan skema berlangganan (subscription) berdasarkan jumlah p
         prime: {
             name: "Netmonk Prime",
             slug: "netmonk_prime",
+            image: path.join(__dirname, "../../assets/images/netmonk/netmonk_prime.jpg"),
             detail: `
 *Netmonk Prime*
 
 Platform monitoring komprehensif untuk infrastruktur IT perusahaan.
+`,
+            features: `
+*Manfaat & Fitur Netmonk Prime:*
 
-*Manfaat:*
 • Monitoring Router, Switch, & Server (CPU, RAM, Storage)
 • Monitoring ketersediaan Website/API
 • Notifikasi via WhatsApp, Telegram, & Email
 • Laporan PDF otomatis sekali klik
-
-*Estimasi Harga:*
-• Mulai dari *Rp 156.000 / bulan* (tergantung jumlah perangkat/node)
 `
         },
         hi: {
             name: "Netmonk Hi",
             slug: "netmonk_hi",
+            image: path.join(__dirname, "../../assets/images/netmonk/netmonk_hi.jpg"),
             detail: `
 *Netmonk Hi*
 
-Solusi monitoring instan yang difokuskan pada pemantauan kualitas link internet broadband.
+Aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan performa SLA pada layanan HSI (High Speed Internet) Telkom. Dirancang sebagai solusi atas tantangan pemantauan layanan yang kompleks dan tidak efisien.
 
-*Manfaat:*
-• Pantau trafik internet secara real-time
-• Analisis penggunaan bandwidth
-• Dashboard yang sangat user-friendly untuk UKM
+*Target:* Pengguna layanan broadband/FTTH Telkom yang membutuhkan dokumen pelaporan pertanggungjawaban belanja IT.
+`,
+            features: `
+*Fitur Utama Netmonk Hi:*
 
-*Estimasi Harga:*
-• Umumnya tersedia sebagai *add-on* atau *bundling* paket Indibiz
-• Hubungi sales untuk harga spesifik paket bundling
-`
-        },
-        enterprise: {
-            name: "Netmonk Enterprise",
-            slug: "netmonk_enterprise",
-            detail: `
-*Netmonk Enterprise / Custom*
+• *Seamless Login:* Akses instan dan aman menggunakan OTP via WhatsApp atau Email.
 
-Solusi monitoring skala besar yang disesuaikan dengan kebutuhan spesifik infrastruktur IT korporasi.
+• *Real-time Dashboard:* Pantau status (Online, Offline, Unknown) dan total perangkat secara terpusat.
 
-*Manfaat:*
-• Monitoring ribuan perangkat/node
-• Deployment on-premise atau cloud
-• Dukungan teknis prioritas & kustomisasi fitur
+• *Historical Monitoring:* Grafik riwayat status, kualitas sinyal (Excellent/Fair), dan penggunaan bandwidth.
 
-*Estimasi Harga:*
-• *Harga Custom* (Berdasarkan jumlah node & modul yang dipilih)
-`
+• *SLA Reporting:* Unduh laporan availability otomatis (Excel) untuk jam kerja maupun harian.
+
+• *Proactive Reporting:* Ringkasan performa bulanan otomatis yang dikirim langsung ke WhatsApp.
+
+• *Instant Alerting:* Notifikasi otomatis via Telegram atau Email saat terjadi kendala jaringan.
+`,
         }
     }
 };

@@ -2,7 +2,7 @@ const path = require('path');
 
 const indibiz = {
     keywords: ["indibiz", "wifi bisnis", "internet bisnis", "umkm"],
-    image: path.join(__dirname, "../../assets/images/indibiz.jpg"),
+    image: path.join(__dirname, "../../assets/images/indibiz/indibiz.jpg"),
     answer: `
 *IndiBiz (Solusi Bisnis)*
 
@@ -27,7 +27,7 @@ Rasio Kecepatan 1:1 (Upload:Download)
         basic: {
             name: "Paket Basic",
             slug: "ib_basic",
-            image: path.join(__dirname, "../../assets/images/basic.jpg"),
+            image: path.join(__dirname, "../../assets/images/indibiz/basic.jpg"),
             detail: `
 *Daftar Harga Paket Basic*
 
@@ -48,7 +48,7 @@ Rasio Kecepatan 1:1 (Upload:Download)
         business: {
             name: "Paket Bisnis",
             slug: "ib_business",
-            image: path.join(__dirname, "../../assets/images/bisnis.jpg"),
+            image: path.join(__dirname, "../../assets/images/indibiz/bisnis.jpg"),
             detail: `
 *Daftar Harga Paket Bisnis*
 

@@ -5,8 +5,8 @@ const netmonkData = require("../../../data/knowledge/netmonk");
 const showNetmonkMenu = async (ctx) => {
     await ctx.answerCbQuery();
     const buttons = [
-        [Markup.button.callback("Lihat Produk", "btn_netmonk_packages")],
-        [Markup.button.callback("Informasi Berlangganan", "btn_netmonk_terms")],
+        [Markup.button.callback(netmonkData.packages.prime.name, "btn_netmonk_prime")],
+        [Markup.button.callback(netmonkData.packages.hi.name, "btn_netmonk_hi")],
         [Markup.button.callback("⬅ Kembali", "btn_back")],
     ];
 
@@ -18,46 +18,37 @@ const showNetmonkMenu = async (ctx) => {
     );
 };
 
-const showNetmonkPackageTypes = async (ctx) => {
-    await ctx.answerCbQuery();
-    const buttons = [
-        [Markup.button.callback(netmonkData.packages.prime.name, "btn_netmonk_prime")],
-        [Markup.button.callback(netmonkData.packages.hi.name, "btn_netmonk_hi")],
-        [Markup.button.callback(netmonkData.packages.enterprise.name, "btn_netmonk_enterprise")],
-        [Markup.button.callback("⬅ Kembali", "btn_netmonk")],
-    ];
-
-    await replyWithMediaOrText(
-        ctx,
-        netmonkData.package_intro,
-        buttons,
-        null
-    );
-};
-
-const showNetmonkTerms = async (ctx) => {
-    await ctx.answerCbQuery();
-    const buttons = [
-        [Markup.button.callback("⬅ Kembali", "btn_netmonk")],
-    ];
-    await replyWithMediaOrText(ctx, netmonkData.terms, buttons, null);
-};
-
 const showNetmonkPackageDetail = async (ctx, key) => {
     const pkg = netmonkData.packages[key];
     if (!pkg) return ctx.answerCbQuery("Paket tidak ditemukan");
 
     await ctx.answerCbQuery();
-    const buttons = [
-        [Markup.button.callback("⬅ Pilihan Produk", "btn_netmonk_packages")],
-        [Markup.button.callback("Menu Utama", "btn_back")],
-    ];
-    await replyWithMediaOrText(ctx, pkg.detail, buttons, null);
+    const buttons = [];
+    if (pkg.features) {
+        buttons.push([Markup.button.callback(`Detail Fitur`, `btn_netmonk_feat_${key}`)]);
+    }
+    buttons.push(
+        [Markup.button.callback("⬅ Kembali", "btn_netmonk")]
+    );
+    await replyWithMediaOrText(ctx, pkg.detail, buttons, pkg.image || null);
 };
+
+const showNetmonkPackageFeatures = async (ctx, key) => {
+    const pkg = netmonkData.packages[key];
+    if (!pkg || !pkg.features) return ctx.answerCbQuery("Fitur tidak ditemukan");
+
+    await ctx.answerCbQuery();
+    const buttons = [
+        [Markup.button.callback("⬅ Kembali", `btn_netmonk_${key}`)],
+        [Markup.button.callback("Kembali ke Netmonk", "btn_netmonk")],
+    ];
+    await replyWithMediaOrText(ctx, pkg.features, buttons, pkg.image || null);
+};
+
+
 
 module.exports = {
     showNetmonkMenu,
-    showNetmonkPackageTypes,
-    showNetmonkTerms,
-    showNetmonkPackageDetail
+    showNetmonkPackageDetail,
+    showNetmonkPackageFeatures
 };

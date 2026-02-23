@@ -10,7 +10,7 @@ const pijar_sekolah = {
         "platform pendidikan telkom",
         "konten pendidikan"
     ],
-    image: path.join(__dirname, "../../assets/images/pijar.jpg"),
+    image: path.join(__dirname, "../../assets/images/pijar/pijar.jpg"),
     answer: `
 *Pijar Sekolah*
 

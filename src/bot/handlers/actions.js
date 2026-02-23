@@ -23,9 +23,8 @@ const {
 
 const {
     showNetmonkMenu,
-    showNetmonkPackageTypes,
-    showNetmonkTerms,
-    showNetmonkPackageDetail
+    showNetmonkPackageDetail,
+    showNetmonkPackageFeatures
 } = require("./products/netmonk");
 
 const {
@@ -55,8 +54,8 @@ module.exports = (bot) => {
     // OCA Actions
     bot.action("btn_oca_terms", (ctx) => showOcaTerms(ctx));
 
-    bot.action(/^btn_oca_(interaction|blast|breach)$/, (ctx) => {
-        const product = ctx.match[1] === 'breach' ? 'breach_checker' : ctx.match[1];
+    bot.action(/^btn_oca_(interaction|blast|breach|breach_checker)$/, (ctx) => {
+        const product = (ctx.match[1] === 'breach' || ctx.match[1] === 'breach_checker') ? 'breach_checker' : ctx.match[1];
         return showOcaPackageDetail(ctx, product);
     });
     bot.action(/^btn_oca_feat_(.+)$/, (ctx) => showOcaPackageFeatures(ctx, ctx.match[1]));
@@ -69,12 +68,9 @@ module.exports = (bot) => {
     bot.action("btn_pijar_bundling", (ctx) => showPijarPackageDetail(ctx, "connectivity_bundle"));
 
     // Netmonk Actions
-    bot.action("btn_netmonk_packages", (ctx) => showNetmonkPackageTypes(ctx));
-    bot.action("btn_netmonk_terms", (ctx) => showNetmonkTerms(ctx));
 
-    bot.action("btn_netmonk_prime", (ctx) => showNetmonkPackageDetail(ctx, "prime"));
-    bot.action("btn_netmonk_hi", (ctx) => showNetmonkPackageDetail(ctx, "hi"));
-    bot.action("btn_netmonk_enterprise", (ctx) => showNetmonkPackageDetail(ctx, "enterprise"));
+    bot.action(/^btn_netmonk_(prime|hi)$/, (ctx) => showNetmonkPackageDetail(ctx, ctx.match[1]));
+    bot.action(/^btn_netmonk_feat_(.+)$/, (ctx) => showNetmonkPackageFeatures(ctx, ctx.match[1]));
 
     // Eazy Cam Actions
     bot.action("btn_eazy_packages", (ctx) => showEazyPackageTypes(ctx));

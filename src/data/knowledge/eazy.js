@@ -11,7 +11,7 @@ const eazy_cam = {
         "eazycam",
         "eazy store"
     ],
-    image: path.join(__dirname, "../../assets/images/eazy.jpg"),
+    image: path.join(__dirname, "../../assets/images/eazy/eazy.jpg"),
     answer: `
 *Antares Eazy (Eazy Cam)*
 

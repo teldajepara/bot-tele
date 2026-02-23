@@ -1,216 +1,109 @@
 const path = require('path');
 
-const oca = {
+const netmonk = {
     keywords: [
-        "oca",
-        "omni communication assistant",
-        "oca interaction lite",
-        "oca blast lite",
-        "oca whatsapp api",
-        "oca breach checker"
+        "netmonk",
+        "netmonk prime",
+        "netmonk hi",
+        "monitoring jaringan",
+        "network monitoring",
+        "monitoring server",
+        "web monitoring",
+        "hsi telkom",
+        "monitoring ftth"
     ],
-    image: path.join(__dirname, "../../assets/images/oca.jpg"),
+    image: path.join(__dirname, "../../assets/images/netmonk/netmonk.jpg"),
     answer: `
-*OCA (Omni Communication Assistant)*
+*Netmonk*
 
-Solusi Omnichannel dari Telkom Indonesia untuk mengelola pesan pelanggan (WhatsApp, SMS, Email, Call) dalam satu dashboard terintegrasi. Cocok untuk otomatisasi pemasaran dan efisiensi layanan pelanggan (CS).
+Aplikasi monitoring infrastruktur IT terintegrasi yang memantau kesehatan jaringan, server, dan aplikasi secara real-time dalam satu dashboard untuk meningkatkan efektivitas dan efisiensi operasional bisnis Anda.
 
-*Layanan Utama*
+*Layanan Utama:*
 
-1. *OCA Interaction Lite*
-Satu dashboard untuk mengelola semua chat pelanggan (Multi-channel & Multi-agent) secara responsif.
+1. *Netmonk Prime*
+Solusi monitoring all-in-one untuk jaringan (SNMP), server, dan API/Web dalam satu platform.
 
-2. *OCA Blast Lite*
-Kirim pesan massal (broadcast) promosi atau notifikasi ke ribuan kontak sekaligus via WhatsApp, SMS, dan Email.
+2. *Netmonk Hi*
+Aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan laporan performa SLA dari layanan broadband/FTTH (High Speed Internet) Telkom.
+`,
 
-3. *OCA Breaker (Breach Checker)*
-Layanan keamanan data untuk mendeteksi dan mencegah kebocoran informasi perusahaan/pelanggan di internet.
+    package_intro: `
+*Produk Utama Netmonk*
+
+Berikut adalah varian produk monitoring dari Netmonk:
+`,
+    terms: `
+*Informasi Harga & Berlangganan Netmonk*
+
+Harga Netmonk menggunakan skema berlangganan (subscription) berdasarkan jumlah perangkat/node yang dimonitor. Tersedia uji coba gratis (Free Trial) selama 14 hari.
 `,
     packages: {
-        interaction: {
-            name: "OCA Interaction Lite",
-            slug: "oca_interaction",
-            image: path.join(__dirname, "../../assets/images/oca_interaction_lite.png"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca_interaction_lite_price.png"),
-            comparison_image: path.join(__dirname, "../../assets/images/oca_interaction_lite_paket.jpg"),
+        prime: {
+            name: "Netmonk Prime",
+            slug: "netmonk_prime",
+            image: path.join(__dirname, "../../assets/images/netmonk/netmonk_prime.jpg"),
             detail: `
-*OCA Interaction Lite*
+*Netmonk Prime*
 
-Dashboard terpadu untuk mengelola seluruh social media dalam satu pintu. Dirancang khusus bagi bisnis skala kecil (Indibiz) yang membutuhkan fitur komunikasi dua arah yang sederhana, berkualitas, dan dapat diakses kapan saja.
-
-*Target:* Bisnis skala kecil seperti online shop, bimbel, bimbingan belajar, dan koperasi.
-
-*Ketentuan:* Hanya dapat dibeli melalui paket Bundling Indibiz (tidak dijual terpisah).
+Platform monitoring komprehensif untuk infrastruktur IT perusahaan.
 `,
             features: `
-*Fitur OCA Interaction Lite:*
+*Manfaat & Fitur Netmonk Prime:*
 
-• Omnichannel Inbox: Kelola semua chat pelanggan dari berbagai media sosial dalam satu dashboard.
-
-• AI Assistant: Balas pesan lebih cepat dengan bantuan AI untuk merancang balasan, merangkum chat, dan meningkatkan kualitas pesan.
-
-• Contact Management: Simpan data pelanggan dan berikan label prioritas melalui fitur Contact Tagging.
-
-• Quick Reply & Knowledge Base: Gunakan template pesan seragam dan pusat informasi produk untuk respon agen yang lebih instan.
-
-• Report & Insight: Pantau performa agen dan analisis produktivitas melalui laporan yang mudah digunakan.
+• Monitoring Router, Switch, & Server (CPU, RAM, Storage)
+• Monitoring ketersediaan Website/API
+• Notifikasi via WhatsApp, Telegram, & Email
+• Laporan PDF otomatis sekali klik
 `,
             pricing: `
-*Harga Paket Bundling IndiBiz x OCA Interaction Lite*
+*Estimasi Harga Netmonk Prime:*
 
-• *50 Mbps:* Rp 492.950/bulan
-• *75 Mbps:* Rp 582.950/bulan
-• *100 Mbps:* Rp 692.950/bulan
-• *150 Mbps:* Rp 902.950/bulan
-
-_Add-on OCA Interaction Lite Rp 108.000. Melalui order di SC-ONE dan My Indibiz._
-_Biaya Pasang Baru (PSB) untuk Layanan Indibiz add-on sebesar Rp 0._
-
-*Syarat & Ketentuan*
-1. Biaya belum termasuk PPN.
-2. Paket aktif / dapat diorder untuk seluruh Regional.
-3. Registrasi paket dilakukan melalui SC One, NCX EBIS, Landing Page Creator EBIS, web myIndibiz.co.id, myIndibiz Partner, dan LPC (IFB) EBIS.
-4. Setiap komponen paket (kecuali perangkat) tidak dapat dilakukan order terpisah (ala carte), hanya berlaku dalam penawaran paket bundling.
-5. NDE: Strategi Go To Market (GTM) Layanan Indibiz 2S (Netmonk atau OCA) dan Layanan Indibiz add-on. C. Tel. 152/UM 000/COP-G0200000/2023. 14 Juli 2023.
-`,
-            comparison: `
-*Perbandingan Paket OCA Interaction*
-
-*1. Interaction Lite*
-Untuk UMKM dengan kebutuhan dasar CS.
-• *Harga:* Mulai Rp 108.000,-
-• *Agen:* 1 lisensi
-• *Beli:* Bundling Indibiz
-• *Channel:* FB, IG, TikTok Seller
-• *AI Assistant:* Termasuk
-• *Ticketing:* Add-on
-• *Label:* 5 label (bisa add-on)
-
-*2. Interaction Lite+*
-Untuk bisnis menengah yang butuh channel lebih luas.
-• *Harga:* Mulai Rp 600.000,-
-• *Agen:* Unlimited +1
-• *Beli:* NCX
-• *Channel:* Termasuk WhatsApp & Telegram
-• *AI Assistant:* Termasuk
-• *Ticketing:* Add-on
-• *Label:* Unlimited
-
-*3. Interaction (Standar)*
-Untuk perusahaan besar & instansi.
-• *Harga:* Mulai Rp 1.399.000,-
-• *Agen:* Unlimited +1
-• *Beli:* NCX
-• *Channel:* Lengkap (Call & Email)
-• *AI Assistant:* Termasuk
-• *Ticketing:* Termasuk
-• *Label:* Unlimited
-
-*Catatan Penting*
-• Lite hanya bisa dibeli bundling Indibiz  
-• Lite punya laporan terbatas  
-• Lite bisa upgrade fitur via add-on (Rp 91.000 – Rp 353.000/bulan)
+• Mulai dari *Rp 156.000 / bulan* (tergantung jumlah perangkat/node)
 `
         },
-        blast: {
-            name: "OCA Blast Lite",
-            slug: "oca_blast",
-            image: path.join(__dirname, "../../assets/images/oca_blast_lite.jpg"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca_blast_lite_price.png"),
-            comparison_image: path.join(__dirname, "../../assets/images/oca_blast_lite_paket.jpg"),
+        hi: {
+            name: "Netmonk Hi",
+            slug: "netmonk_hi",
+            image: path.join(__dirname, "../../assets/images/netmonk/netmonk_hi.jpg"),
             detail: `
-*OCA Blast Lite*
+*Netmonk Hi*
 
-Layanan untuk mengirimkan pesan massal (broadcast) ke berbagai saluran komunikasi hanya dari satu dashboard. Dirancang bagi bisnis skala kecil agar dapat menjangkau pelanggan secara cepat dan efisien untuk kebutuhan promosi hingga notifikasi penting.
+Produk unggulan Netmonk berupa aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan performa SLA pada layanan HSI (High Speed Internet) Telkom. Dirancang sebagai solusi atas tantangan pemantauan layanan yang kompleks dan tidak efisien.
 
-*Target:* Bisnis skala kecil (UMKM) seperti online shop, bimbingan belajar, restoran rumahan, dan koperasi.
-
-*Ketentuan:* Hanya dapat dibeli melalui paket Bundling Indibiz (tidak dijual terpisah).
+*Target:* Pengguna layanan broadband/FTTH Telkom yang membutuhkan dokumen pelaporan pertanggungjawaban belanja IT.
 `,
             features: `
-*Fitur OCA Blast Lite:*
+*Fitur Modul Netmonk Hi:*
 
-• Multi-Channel Blast: Kirim pesan massal sekaligus melalui saluran WhatsApp, SMS, dan Email.
+• *Seamless Login:* Masuk aplikasi dengan mudah dan aman menggunakan metode One-Time Password (OTP) via Email atau WhatsApp tanpa kredensial tambahan.
 
-• Dashboard Overview: Pantau sisa kuota setiap channel, persentase keberhasilan pengiriman, dan riwayat aktivitas blast secara real-time.
+• *Dashboard Real-time:* Menampilkan chart status internet (Online, Offline, Unknown), total nomor internet yang dipantau, dan detail pembaruan data terakhir.
 
-• Contact Management: Atur data konsumen secara efektif dan gunakan fitur Group Contact untuk mengirim promo ke kelompok pelanggan tertentu.
+• *Internet Status View:* Grafik historis status internet dan nilai SLA (availability) yang dapat disesuaikan berdasarkan periode waktu tertentu.
 
-• File Management: Atur dan simpan file media kebutuhan broadcast dalam satu folder penyimpanan yang terintegrasi.
+• *Internet Quality:* Grafik historis kualitas internet (Excellent & Fair) dengan indikator visual untuk mendeteksi kualitas sinyal yang lemah.
 
-• Instant Broadcast: Fitur untuk menyebarkan pesan ke ribuan kontak dalam hitungan detik kapan saja dan di mana saja.
+• *Reporting Availability:* Download laporan otomatis format Excel untuk SLA Jam Kerja (active hours) dan SLA Harian (all hours).
+
+• *Traffic & Bandwidth:* Grafik historis penggunaan data (download & upload) untuk membantu analisis performa jaringan dan pengambilan keputusan.
+
+• *Proactive Reporting:* Laporan ringkasan bulanan otomatis melalui WhatsApp yang mencakup jumlah nomor internet dan persentase ketersediaan.
+
+• *Alerting:* Notifikasi otomatis via Telegram Group atau Email jika perangkat terdeteksi mati atau kembali hidup.
 `,
             pricing: `
-*Harga Paket Bundling IndiBiz x OCA Blast Lite*
+*Manfaat Fitur Netmonk HI Bagi User:*
 
-• *50 Mbps:* Rp 623.900/bulan (HSI Bisnis Basic) | Rp 668.900/bulan (HSI Bisnis)
-• *75 Mbps:* Rp 676.900/bulan (HSI Bisnis Basic) | Rp 746.900/bulan (HSI Bisnis)
-• *100 Mbps:* Rp 781.900/bulan (HSI Bisnis Basic) | Rp 891.900/bulan (HSI Bisnis)
-• *150 Mbps:* Rp 916.900/bulan (HSI Bisnis Basic) | Rp 1.036.900/bulan (HSI Bisnis)
+1. *Status Availability:* Bukti penggunaan sebagai bahan evaluasi atau audit.
+2. *Traffic & Bandwidth:* Analisis penggunaan dan okupansi bandwidth pada jam tertentu.
+3. *Internet Quality:* Menjaga kualitas internet tetap dalam kondisi 'Excellent'.
+4. *Reporting:* Mempercepat pembuatan laporan berbasis Excel.
+5. *Alert Notification:* Mempercepat penanganan kendala jaringan.
 
-_Add-on OCA Blast Lite Rp 263.000. Melalui order di SC-ONE and My Indibiz._
-
-*Fitur Basic (Sudah Termasuk):*
-50 Kuota & 5 Template (WhatsApp, SMS, Email), 1 Contact Group, dan 50MB Storage.
-
-*Syarat & Ketentuan*
-1. Biaya belum termasuk PPN.
-2. Paket aktif / dapat diorder untuk seluruh Regional.
-3. Registrasi dilakukan melalui SC One, NCX EBIS, Landing Page Creator EBIS, atau myIndibiz.
-4. Komponen paket tidak dapat diorder terpisah (ala carte), hanya berlaku dalam penawaran bundling.
-`,
-            comparison: `
-*Perbandingan Paket OCA Blast*
-
-*1. Blast Lite*
-Untuk UMKM dan broadcast sederhana.
-• *Harga:* Mulai Rp 263.000,-
-• *Channel:* SMS & WhatsApp
-• *Quota:* 50 / channel
-• *Template:* 5 (bisa add-on)
-• *Beli:* Bundling Indibiz
-
-*2. Blast Lite+*
-Untuk bisnis menengah dengan satu channel utama.
-• *Harga:* Mulai Rp 900.000,-
-• *Channel:* Pilih 1 (WA / SMS / Email)
-• *Quota:* Sesuai pemakaian
-• *Template:* Unlimited
-• *Beli:* NCX
-
-*3. Blast (Standar)*
-Untuk perusahaan besar & instansi.
-• *Harga:* Mulai Rp 1.800.000,-
-• *Channel:* Omnichannel lengkap (termasuk Call & Email)
-• *Quota:* Sesuai pemakaian
-• *Template:* Unlimited
-• *Beli:* NCX
-
-*Add-On (Lite)*
-• Tambah quota  
-• Unlimited template  
-• Scheduler, API, & storage
-`
-        },
-
-        breach_checker: {
-            name: "OCA Breaker",
-            slug: "oca_breach",
-            detail: `
-*OCA Breaker (Breach Checker)*
-
-Layanan keamanan untuk mendeteksi apakah data perusahaan atau pelanggan (seperti email/nomor telepon) telah bocor di internet (data breach).
-
-*Fitur:*
-• Pengecekan kebocoran data secara berkala
-• Notifikasi jika ditemukan kebocoran baru
-• Laporan detail sumber kebocoran
-
-*Estimasi Harga:*
-• Hubungi sales untuk penawaran harga khusus.
+*Harga:* Umumnya tersedia sebagai *add-on* atau *bundling* paket Indibiz. Hubungi sales untuk detail harga spesifik.
 `
         }
     }
 };
 
-module.exports = oca;
+module.exports = netmonk;

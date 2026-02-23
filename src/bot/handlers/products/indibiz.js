@@ -25,7 +25,7 @@ const showIndibizPackageDetail = async (ctx, key) => {
     await ctx.answerCbQuery();
     const buttons = [
         [Markup.button.callback("⬅ Kembali", "btn_indibiz")],
-        [Markup.button.callback("Menu Utama", "btn_back")],
+        [Markup.button.callback("Menu Awal", "btn_back")],
     ];
     await replyWithMediaOrText(ctx, pkg.detail, buttons, pkg.image);
 };
