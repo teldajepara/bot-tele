@@ -17,8 +17,7 @@ const {
 
 const {
     showPijarMenu,
-    showPijarTerms,
-    showPijarPackageDetail
+    showPijarDetail
 } = require("./products/pijar");
 
 const {
@@ -63,9 +62,7 @@ module.exports = (bot) => {
     bot.action(/^btn_oca_compare_(.+)$/, (ctx) => showOcaPackageComparison(ctx, ctx.match[1]));
 
     // Pijar Actions
-    bot.action("btn_pijar_terms", (ctx) => showPijarTerms(ctx));
-    bot.action("btn_pijar_single", (ctx) => showPijarPackageDetail(ctx, "basic_platform"));
-    bot.action("btn_pijar_bundling", (ctx) => showPijarPackageDetail(ctx, "connectivity_bundle"));
+    bot.action(/^btn_pijar_(keunggulan|implementasi|sukses)$/, (ctx) => showPijarDetail(ctx, ctx.match[1]));
 
     // Netmonk Actions
 
@@ -82,8 +79,8 @@ module.exports = (bot) => {
 
     bot.action("btn_cat_prodigi", async (ctx) => {
         const buttons = [
-            [Markup.button.callback("OCA (Blast, Interaction, Breaker)", "btn_oca")],
-            [Markup.button.callback("Pijar Sekolah", "btn_pijar")],
+            [Markup.button.callback("OCA (Interaction, Blast, Breaker)", "btn_oca")],
+            [Markup.button.callback("PIJAR Sekolah", "btn_pijar")],
             [Markup.button.callback("Netmonk", "btn_netmonk")],
             [Markup.button.callback("Antares Eazy", "btn_eazy")],
             [Markup.button.callback("⬅ Kembali", "btn_back")]
@@ -99,7 +96,7 @@ module.exports = (bot) => {
     bot.action("btn_back", async (ctx) => {
         const buttons = [
             [Markup.button.callback("Internet (Basic, Bisnis)", "btn_indibiz")],
-            [Markup.button.callback("PRODIGI (OCA, Pijar, Netmonk, Eazy)", "btn_cat_prodigi")],
+            [Markup.button.callback("PRODIGI", "btn_cat_prodigi")],
         ];
         await replyWithMediaOrText(
             ctx,

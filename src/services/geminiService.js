@@ -46,7 +46,7 @@ Berikan jawaban yang taktis, to the point, dan mendukung kelancaran pekerjaan ti
 
 RINGKASAN PRODUK TERSEDIA:
 1. INDIBIZ: Target market B2B/UMKM dengan keunggulan upload/download simetris 1:1.
-3. PRODIGI (OCA, Pijar, Netmonk, Eazy): Solusi Enterprise & Digital Service Telkom.
+2. PRODIGI (OCA, PIJAR, Netmonk, EazyCam): Solusi Enterprise & Digital Service Telkom.
 
 DATA PENGETAHUAN PRODUK (Detail Relevan):
 ${relevantContext}

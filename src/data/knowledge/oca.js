@@ -30,8 +30,8 @@ Layanan keamanan data untuk mendeteksi dan mencegah kebocoran informasi perusaha
         interaction: {
             name: "OCA Interaction Lite",
             slug: "oca_interaction",
-            image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite.png"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite_price.png"),
+            image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite.jpg"),
+            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite_price.jpg"),
             comparison_image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite_paket.jpg"),
             detail: `
 *OCA Interaction Lite*
@@ -115,7 +115,7 @@ Untuk perusahaan besar & instansi.
             name: "OCA Blast Lite",
             slug: "oca_blast",
             image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite.jpg"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite_price.png"),
+            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite_price.jpg"),
             comparison_image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite_paket.jpg"),
             detail: `
 *OCA Blast Lite*

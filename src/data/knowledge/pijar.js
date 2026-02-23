@@ -11,75 +11,57 @@ const pijar_sekolah = {
         "konten pendidikan"
     ],
     image: path.join(__dirname, "../../assets/images/pijar/pijar.jpg"),
+    keunggulan_image: path.join(__dirname, "../../assets/images/pijar/pijar_keunggulan.jpg"),
+    implementasi_image: path.join(__dirname, "../../assets/images/pijar/pijar_implementasi.jpg"),
+    sukses_image: path.join(__dirname, "../../assets/images/pijar/pijar_sukses.jpg"),
     answer: `
-*Pijar Sekolah*
+*PIJAR Sekolah*
 
-Platform ekosistem digital pendidikan dari Telkom Indonesia yang memfasilitasi sekolah dalam digitalisasi KBM, administrasi, dan ujian. 
-
-Pijar Sekolah tidak hanya menyediakan sistem manajemen (LMS), tetapi juga ribuan konten pendidikan berkualitas yang selaras dengan kurikulum nasional.
-
-*Fitur Unggulan Pijar Sekolah*
-
-1️⃣ *Content Learning Management System*
-Akses ribuan video pembelajaran, buku digital, dan lab maya untuk siswa dan guru.
-
-2️⃣ *Computer Based Test (CBT)*
-Ujian sekolah/harian berbasis digital yang aman dengan bank soal lengkap dan penilaian otomatis.
-
-3️⃣ *Manajemen Sekolah (SIS)*
-Digitalisasi absen, rapor (E-Rapor), jadwal pelajaran, hingga administrasi sekolah.
-
-4️⃣ *Dashboard Monitoring*
-Laporan perkembangan belajar siswa secara real-time yang dapat diakses oleh guru dan kepala sekolah.
-`,
-
-    package_intro: `
-*Pilihan Paket Pijar Sekolah*
-
-Berikut adalah kategori layanan Pijar Sekolah yang tersedia:
-`,
-    terms: `
-*Informasi Harga & Berlangganan Pijar Sekolah*
-
-Harga Pijar Sekolah bersifat fleksibel berdasarkan jumlah siswa di sekolah Anda. Skema berlangganan umumnya dilakukan secara tahunan (per tahun ajaran) melalui penawaran resmi Telkom.
-`,
-    packages: {
-        basic_platform: {
-            name: "Pijar Sekolah Basic (SaaS)",
-            slug: "pijar_basic",
-            detail: `
-*Pijar Sekolah Basic (Platform Only)*
-
-Layanan cloud platform untuk sekolah yang sudah memiliki infrastruktur internet mandiri.
+Platform digital untuk pendidikan yang mengintegrasikan proses ujian, belajar, administrasi, dan pelaporan dalam satu sistem yang komprehensif dan kolaboratif.
 
 *Fitur:*
-• Akses Full Platform (LMS, CBT, SIS)
-• Akses Konten Pendidikan Digital
-• Akun Guru & Siswa sesuai jumlah lisensi
 
-*Estimasi Harga:*
-• Mulai dari *Rp 5.000 - Rp 15.000 / siswa / bulan*
-• (Harga final tergantung jumlah total siswa & durasi kontrak)
+1. *Computer Based Test (CBT)*
+Menyelenggarakan ujian secara efisien, terjadwal, dan terdistribusi otomatis, dengan hasil yang cepat, akurat, dan terdokumentasi secara digital.
+
+2. *Presensi*
+Presensi tercatat cermat dan akurat, mendukung efisiensi administrasi dan keterbukaan data kehadiran.
+
+3. *Tugas dan Konten*
+Tugas dan materi dapat dibagikan secara terstruktur dan mudah dipantau. Pengumpulan, penilaian, dan umpan balik dilakukan dalam satu platform.
+
+4. *Laporan Belajar*
+Laporan belajar tersusun otomatis, akurat, dan mudah diakses, sehingga memudahkan pemantauan perkembangan siswa secara berkala dan efisien.
+`,
+    keunggulan: `
+*Keunggulan Utama PIJAR Sekolah*
+
+Pijar Sekolah bukan sekadar LMS biasa, namun didukung oleh ekosistem BUMN.
+
+• *Dukungan BUMN:* Jaminan layanan berkualitas, kepatuhan (compliance), dan keamanan data nasional.
+• *Integrasi Indibiz:* Hadir dengan paket layanan akses internet andal dari Telkom Indonesia.
+• *Satu Data Pemerintah:* Memudahkan pemerintah daerah memantau kualitas pendidikan melalui Dashboard Pendidikan.
+`,
+    implementasi: `
+*Tahap Implementasi*
+
+Langkah-langkah bagi sekolah yang ingin memulai transformasi digital:
+
+1. *Sosialisasi:* Pengenalan manfaat dan fitur utama kepada sekolah/dinas.
+2. *Pembuatan Akun:* Registrasi sekolah di platform Pijar.
+3. *Bimbingan Teknis (Bimtek):* Pelatihan intensif untuk operator dan guru.
+4. *Input Data:* Pendampingan input data siswa, guru, dan mapel.
+5. *Pendampingan:* Penyelesaian administrasi kontrak dengan Account Manager Telkom.
+`,
+    sukses: `
+*Jejak Sukses*
+
+Hingga semester genap 2024/2025, Pijar telah menjangkau:
+
+• *408.000+* Siswa.
+• *680+* Sekolah di 29 Provinsi seluruh Indonesia.
+• *105.000+* Jadwal Ujian telah terlaksana dengan sukses.
 `
-        },
-        connectivity_bundle: {
-            name: "Pijar Sekolah Connectivity",
-            slug: "pijar_bundling",
-            detail: `
-*Pijar Sekolah Connectivity (Bundling)*
-
-Solusi terintegrasi antara platform digital pendidikan dengan koneksi internet Dedicated/Broadband Telkom.
-
-*Fitur:*
-• Layanan Pijar Sekolah Full Solution
-• Konektivitas Internet (Astinet / Indibiz Sekolah)
-• Dukungan On-Site Implementation
-
-*Estimasi Harga:*
-• *By Quote* (Menyesuaikan dengan kapasitas bandwidth dan lokasi sekolah)
-`
-        }
-    }
 };
 
 module.exports = pijar_sekolah;

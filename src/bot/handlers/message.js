@@ -29,7 +29,7 @@ module.exports = async (ctx) => {
           parse_mode: "Markdown",
           ...Markup.inlineKeyboard([
             [Markup.button.callback("Internet (Basic, Bisnis)", "btn_indibiz")],
-            [Markup.button.callback("PRODIGI (OCA, Pijar, Netmonk, Eazy)", "btn_cat_prodigi")],
+            [Markup.button.callback("PRODIGI", "btn_cat_prodigi")],
           ]),
         }
       );
@@ -51,7 +51,7 @@ module.exports = async (ctx) => {
         "• WhatsApp OCA Information: 0811-1069-1011\n" +
         "• Email Support: cs@ocatelkom.co.id\n" +
         "• Helpdesk: Live Chat via ocaindonesia.co.id\n\n" +
-        "*Pijar Sekolah:*\n" +
+        "*PIJAR Sekolah:*\n" +
         "• WhatsApp Chat: 0812-8899-9576\n" +
         "• Email: support@pijarsekolah.id\n\n" +
         "*Netmonk (Monitoring):*\n" +
@@ -80,7 +80,7 @@ module.exports = async (ctx) => {
             [Markup.button.callback("OCA Interaction Lite", "doc_oca_interaction_lite")],
             [Markup.button.callback("OCA Blast Lite", "doc_oca_blast_lite")],
             [Markup.button.callback("OCA Breaker", "doc_oca_breaker")],
-            [Markup.button.callback("Pijar Sekolah", "doc_pijar_sekolah")],
+            [Markup.button.callback("PIJAR Sekolah", "doc_pijar_sekolah")],
             [Markup.button.callback("Netmonk Monitoring", "doc_netmonk")],
             [Markup.button.callback("Antares Eazy Cam", "doc_antares_eazy")]
           ])

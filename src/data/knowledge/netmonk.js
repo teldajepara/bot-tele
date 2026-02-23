@@ -4,13 +4,12 @@ const netmonk = {
     keywords: [
         "netmonk",
         "netmonk prime",
-        "netmonk hi",
         "monitoring jaringan",
         "network monitoring",
         "monitoring server",
         "web monitoring",
-        "hsi telkom",
-        "monitoring ftth"
+        "it infrastructure monitoring",
+        "telkom indonesia"
     ],
     image: path.join(__dirname, "../../assets/images/netmonk/netmonk.jpg"),
     answer: `
@@ -21,22 +20,12 @@ Aplikasi monitoring infrastruktur IT terintegrasi yang memantau kesehatan jaring
 *Layanan Utama:*
 
 1. *Netmonk Prime*
-Solusi monitoring all-in-one untuk jaringan (SNMP), server, dan API/Web dalam satu platform.
+Solusi monitoring all-in-one yang komprehensif untuk jaringan (SNMP), server, dan API/Web dalam satu platform.
 
 2. *Netmonk Hi*
-Aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan laporan performa SLA dari layanan broadband/FTTH (High Speed Internet) Telkom.
+Aplikasi monitoring jaringan khusus untuk layanan broadband/FTTH (High Speed Internet) Telkom dengan fitur laporan SLA otomatis.
 `,
 
-    package_intro: `
-*Produk Utama Netmonk*
-
-Berikut adalah varian produk monitoring dari Netmonk:
-`,
-    terms: `
-*Informasi Harga & Berlangganan Netmonk*
-
-Harga Netmonk menggunakan skema berlangganan (subscription) berdasarkan jumlah perangkat/node yang dimonitor. Tersedia uji coba gratis (Free Trial) selama 14 hari.
-`,
     packages: {
         prime: {
             name: "Netmonk Prime",
@@ -45,15 +34,26 @@ Harga Netmonk menggunakan skema berlangganan (subscription) berdasarkan jumlah p
             detail: `
 *Netmonk Prime*
 
-Platform monitoring komprehensif untuk infrastruktur IT perusahaan.
+Platform monitoring komprehensif yang bersifat proactive dan preventive maintenance untuk seluruh infrastruktur IT perusahaan (Jaringan, Server, dan Web/API).
+
+*Target:* Perusahaan atau organisasi skala kecil hingga besar yang memiliki infrastruktur IT kompleks dan membutuhkan visibilitas menyeluruh dalam satu dashboard (One tool, all purposes).
 `,
             features: `
-*Manfaat & Fitur Netmonk Prime:*
+*Fitur Utama Netmonk Prime:*
 
-• Monitoring Router, Switch, & Server (CPU, RAM, Storage)
-• Monitoring ketersediaan Website/API
-• Notifikasi via WhatsApp, Telegram, & Email
-• Laporan PDF otomatis sekali klik
+• *3-in-1 Monitoring:* Pantau Jaringan, Server, dan Web/API secara terpusat dalam satu dashboard.
+
+• *Predictive Dashboard:* Visualisasi real-time status perangkat dan analisis prediksi penggunaan resource di masa depan.
+
+• *Proactive Alerting:* Notifikasi otomatis via WhatsApp, Telegram, dan Email saat terdeteksi anomali atau overload resource.
+
+• *Reporting Automation:* Hasilkan laporan performa infrastruktur format PDF otomatis hanya dengan satu klik.
+
+• *MONA (AI Assistant):* Asisten interaktif untuk rangkuman aktivitas, analisis insiden, dan rekomendasi solusi cepat.
+
+• *Web/API Analysis:* Pantau response time dan uptime secara mendalam untuk menjaga kualitas layanan digital.
+
+• *User Management:* Kendali hak akses pengguna yang fleksibel untuk keamanan operasional monitoring.
 `
         },
         hi: {
@@ -81,7 +81,7 @@ Aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan performa SLA
 • *Proactive Reporting:* Ringkasan performa bulanan otomatis yang dikirim langsung ke WhatsApp.
 
 • *Instant Alerting:* Notifikasi otomatis via Telegram atau Email saat terjadi kendala jaringan.
-`,
+`
         }
     }
 };

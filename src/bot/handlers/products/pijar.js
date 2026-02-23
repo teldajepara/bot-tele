@@ -6,9 +6,9 @@ const showPijarMenu = async (ctx) => {
     await ctx.answerCbQuery();
 
     const buttons = [
-        [Markup.button.callback(pijarData.packages.basic_platform.name, "btn_pijar_single")],
-        [Markup.button.callback(pijarData.packages.connectivity_bundle.name, "btn_pijar_bundling")],
-        [Markup.button.callback("Informasi Harga", "btn_pijar_terms")],
+        [Markup.button.callback("Keunggulan Utama", "btn_pijar_keunggulan")],
+        [Markup.button.callback("Tahap Implementasi", "btn_pijar_implementasi")],
+        [Markup.button.callback("Jejak Sukses", "btn_pijar_sukses")],
         [Markup.button.callback("⬅ Kembali", "btn_back")],
     ];
 
@@ -20,19 +20,9 @@ const showPijarMenu = async (ctx) => {
     );
 };
 
-
-
-const showPijarTerms = async (ctx) => {
-    await ctx.answerCbQuery();
-    const buttons = [
-        [Markup.button.callback("⬅ Kembali", "btn_pijar")],
-    ];
-    await replyWithMediaOrText(ctx, pijarData.terms, buttons, null);
-};
-
-const showPijarPackageDetail = async (ctx, key) => {
-    const pkg = pijarData.packages[key];
-    if (!pkg) return ctx.answerCbQuery("Paket tidak ditemukan");
+const showPijarDetail = async (ctx, key) => {
+    const text = pijarData[key];
+    if (!text) return ctx.answerCbQuery("Detail tidak ditemukan");
 
     await ctx.answerCbQuery();
     const buttons = [
@@ -40,11 +30,10 @@ const showPijarPackageDetail = async (ctx, key) => {
         [Markup.button.callback("Menu Awal", "btn_back")],
     ];
 
-    await replyWithMediaOrText(ctx, pkg.detail, buttons, null);
+    await replyWithMediaOrText(ctx, text, buttons, pijarData[`${key}_image`] || null);
 };
 
 module.exports = {
     showPijarMenu,
-    showPijarTerms,
-    showPijarPackageDetail
+    showPijarDetail
 };

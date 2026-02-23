@@ -40,7 +40,7 @@ const faq = [
         answer: "Target utamanya adalah sekolah dari jenjang SD, SMP, hingga SMA/SMK (Negeri maupun Swasta). Sekolah bisa berlangganan modul digital (absensi, ujian online) dan dapat dipaketkan (bundling) dengan internet."
     },
     {
-        question: "Bagaimana prosedur penjualan produk PRODIGI (OCA, Netmonk, dll)?",
+        question: "Bagaimana prosedur penjualan produk PRODIGI?",
         answer: "Sebagai SF (Sales Force) reguler, Anda cukup menyetorkan prospek (Lead Generation) ke TL atau Account Manager (AM) B2B. Proses presentasi dan closing akan dikawal oleh tim khusus B2B Telkom."
     },
     {

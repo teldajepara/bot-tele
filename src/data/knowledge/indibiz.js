@@ -12,7 +12,7 @@ Layanan internet dari Telkom Indonesia yang dirancang khusus untuk kebutuhan bis
 • Internet High Speed **Tanpa FUP** (Tanpa batasan kuota).
 • Koneksi prioritas yang lebih stabil untuk bisnis.
 • Support teknis prioritas melalui channel khusus.
-• Bundling solusi digital (CCTV).
+• Bundling solusi digital.
 
 *Pilihan Paket:*
 1. *Paket Basic*: Solusi internet hemat tanpa FUP untuk usaha rintisan/SME.
