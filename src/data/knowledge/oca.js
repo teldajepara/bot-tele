@@ -9,13 +9,13 @@ const oca = {
         "oca whatsapp api",
         "oca breach checker"
     ],
-    image: path.join(__dirname, "../../assets/images/oca.jpg"),
+    image: path.join(__dirname, "../../assets/images/oca/oca.jpg"),
     answer: `
 *OCA (Omni Communication Assistant)*
 
 Solusi Omnichannel dari Telkom Indonesia untuk mengelola pesan pelanggan (WhatsApp, SMS, Email, Call) dalam satu dashboard terintegrasi. Cocok untuk otomatisasi pemasaran dan efisiensi layanan pelanggan (CS).
 
-*Layanan Utama*
+*Layanan Utama:*
 
 1. *OCA Interaction Lite*
 Satu dashboard untuk mengelola semua chat pelanggan (Multi-channel & Multi-agent) secara responsif.
@@ -30,9 +30,9 @@ Layanan keamanan data untuk mendeteksi dan mencegah kebocoran informasi perusaha
         interaction: {
             name: "OCA Interaction Lite",
             slug: "oca_interaction",
-            image: path.join(__dirname, "../../assets/images/oca_interaction_lite.png"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca_interaction_lite_price.png"),
-            comparison_image: path.join(__dirname, "../../assets/images/oca_interaction_lite_paket.jpg"),
+            image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite.png"),
+            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite_price.png"),
+            comparison_image: path.join(__dirname, "../../assets/images/oca/oca_interaction_lite_paket.jpg"),
             detail: `
 *OCA Interaction Lite*
 
@@ -114,9 +114,9 @@ Untuk perusahaan besar & instansi.
         blast: {
             name: "OCA Blast Lite",
             slug: "oca_blast",
-            image: path.join(__dirname, "../../assets/images/oca_blast_lite.jpg"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca_blast_lite_price.png"),
-            comparison_image: path.join(__dirname, "../../assets/images/oca_blast_lite_paket.jpg"),
+            image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite.jpg"),
+            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite_price.png"),
+            comparison_image: path.join(__dirname, "../../assets/images/oca/oca_blast_lite_paket.jpg"),
             detail: `
 *OCA Blast Lite*
 
@@ -206,8 +206,8 @@ Untuk perusahaan besar & instansi.
         breach_checker: {
             name: "OCA Breaker",
             slug: "oca_breach",
-            image: path.join(__dirname, "../../assets/images/oca_breaker.jpg"),
-            pricing_image: path.join(__dirname, "../../assets/images/oca_breaker_price.jpg"),
+            image: path.join(__dirname, "../../assets/images/oca/oca_breaker.jpg"),
+            pricing_image: path.join(__dirname, "../../assets/images/oca/oca_breaker_price.jpg"),
             detail: `
 *OCA Breaker (Breach Checker)*
 

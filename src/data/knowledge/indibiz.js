@@ -14,11 +14,9 @@ Layanan internet dari Telkom Indonesia yang dirancang khusus untuk kebutuhan bis
 • Support teknis prioritas melalui channel khusus.
 • Bundling solusi digital (CCTV).
 
-*Pilihan Paket IndiBiz*
-
+*Pilihan Paket:*
 1. *Paket Basic*: Solusi internet hemat tanpa FUP untuk usaha rintisan/SME.
 Rasio Kecepatan 1:2 (Upload:Download)
-
 2. *Paket Bisnis*: Internet dengan performa lebih tinggi dan stabil untuk kebutuhan operasional intensif.
 Rasio Kecepatan 1:1 (Upload:Download)
 `,
