@@ -13,15 +13,9 @@ const eazy_cam = {
     ],
     image: path.join(__dirname, "../../assets/images/eazy/eazy.jpg"),
     answer: `
-*Antares Eazy (Eazy Cam)*
+*Antares Eazy*
 
-Solusi cerdas keamanan berbasis AIoT dari Telkom Indonesia. Eazy Cam mengintegrasikan perangkat IP Camera dengan penyimpanan Cloud Recording di server lokal (Indonesia) untuk menjamin keamanan data tanpa risiko kehilangan rekaman akibat kerusakan perangkat.
-
-*Fitur Unggulan Eazy Cam:*
-• *Cloud Recording:* Penyimpanan aman di Data Center Telkom Indonesia.
-• *AI Vision:* Deteksi gerakan pintar, deteksi suara, dan notifikasi real-time.
-• *Dual Connection:* Varian tertentu mendukung koneksi LAN Port untuk stabilitas tanpa Wi-Fi.
-• *Two-Way Audio:* Komunikasi dua arah langsung melalui Eazy App.
+Antares Eazy merupakan platform ekosistem IoT pintar yang terintegrasi dengan berbagai jenis, model & merek, serta layanan cloud & video analytics yang memberikan fleksibilitas, kemudahan dan kenyamanan dalam mengelola perangkat pintar di lingkungan bisnis dengan harga yang terjangkau.
 `,
 
     package_intro: `

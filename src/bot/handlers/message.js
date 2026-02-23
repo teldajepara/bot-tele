@@ -92,9 +92,23 @@ module.exports = async (ctx) => {
       await ctx.sendChatAction("typing");
       return ctx.reply(
         "🌟 *Testimoni Layanan PRODIGI*\n\n" +
-        "Banyak perusahaan dan instansi yang telah mempercayakan perbaikan proses bisnis mereka menggunakan ekosistem digital **PRODIGI Telkom**.\n\n" +
-        "_(Katalog testimoni masih dalam tahap penyusunan. Silakan hubungi Admin untuk informasi lebih detail tentang portfolio klien kami.)_",
-        { parse_mode: "Markdown" }
+        "Banyak perusahaan dan instansi yang telah mempercayakan perbaikan proses bisnis mereka menggunakan ekosistem digital *PRODIGI Telkom*.\n\n" +
+        "*PIJAR Sekolah*\n" +
+        "• [Testimoni 1](https://vt.tiktok.com/ZSmmKC7fW/)\n" +
+        "• [Testimoni 2](https://vt.tiktok.com/ZSmmEBKxP/)\n" +
+        "• [Testimoni 3](https://vt.tiktok.com/ZSmmEjwWH/)\n" +
+        "• [Testimoni 4](https://vt.tiktok.com/ZSmu1u593/)\n" +
+        "• [Testimoni 5](https://vt.tiktok.com/ZSmudXPNH/)\n\n" +
+        "*Netmonk*\n" +
+        "• [Testimoni 1](https://vt.tiktok.com/ZSmmEuUXj/)\n\n" +
+        "*OCA*\n" +
+        "• [Testimoni 1](https://vt.tiktok.com/ZSmud6JFr/)\n" +
+        "• [Testimoni 2](https://vt.tiktok.com/ZSmudRKPH/)\n\n" +
+        "*Antares Eazy Cam*\n" +
+        "• [Testimoni 1](https://vt.tiktok.com/ZSmuRU3sR/)\n" +
+        "• [Testimoni 2](https://vt.tiktok.com/ZSmuRXMLT/)\n" +
+        "• [Testimoni 3](https://vt.tiktok.com/ZSmu8sFN1/)",
+        { parse_mode: "Markdown", disable_web_page_preview: true }
       );
 
     case "❓ faq":
