@@ -5,8 +5,8 @@ const eazyData = require("../../../data/knowledge/eazy");
 const showEazyMenu = async (ctx) => {
     await ctx.answerCbQuery();
     const buttons = [
-        [Markup.button.callback("Lihat Pilihan Paket", "btn_eazy_packages")],
-        [Markup.button.callback("Informasi Harga", "btn_eazy_terms")],
+        [Markup.button.callback("Harga", "btn_eazy_pricing")],
+        [Markup.button.callback("Voucher Cloud Recording", "btn_eazy_cloud")],
         [Markup.button.callback("⬅ Kembali", "btn_back")],
     ];
 
@@ -18,47 +18,37 @@ const showEazyMenu = async (ctx) => {
     );
 };
 
-const showEazyPackageTypes = async (ctx) => {
+const showEazyPricing = async (ctx) => {
     await ctx.answerCbQuery();
     const buttons = [
-        [Markup.button.callback("Beli Perangkat", "btn_eazy_purchase")],
-        [Markup.button.callback("Langganan Cloud", "btn_eazy_cloud")],
-        [Markup.button.callback("Bundling IndiBiz", "btn_eazy_bundling")],
         [Markup.button.callback("⬅ Kembali", "btn_eazy")],
     ];
 
     await replyWithMediaOrText(
         ctx,
-        eazyData.package_intro,
+        eazyData.pricing,
         buttons,
-        null
+        eazyData.image
     );
 };
 
-const showEazyTerms = async (ctx) => {
+
+const showEazyCloudPricing = async (ctx) => {
     await ctx.answerCbQuery();
     const buttons = [
         [Markup.button.callback("⬅ Kembali", "btn_eazy")],
     ];
-    await replyWithMediaOrText(ctx, eazyData.terms, buttons, null);
-};
 
-const showEazyPackageDetail = async (ctx, key) => {
-    const pkg = eazyData.packages[key];
-    if (!pkg) return ctx.answerCbQuery("Paket tidak ditemukan");
-
-    await ctx.answerCbQuery();
-    const buttons = [
-        [Markup.button.callback("⬅ Pilihan Paket", "btn_eazy_packages")],
-        [Markup.button.callback("Menu Awal", "btn_back")],
-    ];
-
-    await replyWithMediaOrText(ctx, pkg.detail, buttons, null);
+    await replyWithMediaOrText(
+        ctx,
+        eazyData.cloud_pricing,
+        buttons,
+        eazyData.image
+    );
 };
 
 module.exports = {
     showEazyMenu,
-    showEazyPackageTypes,
-    showEazyTerms,
-    showEazyPackageDetail
+    showEazyPricing,
+    showEazyCloudPricing
 };

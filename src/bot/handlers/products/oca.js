@@ -38,12 +38,12 @@ const showOcaPackageDetail = async (ctx, key) => {
         buttons.push([Markup.button.callback(`Detail Fitur`, `btn_oca_feat_${key}`)]);
     }
     if (pkg.pricing) {
-        const priceText = key === 'breach_checker' ? 'Harga Layanan OCA Breaker' : 'Harga Paket IndiBiz x OCA';
+        const priceText = key === 'breach_checker' ? 'Harga' : 'Harga';
         buttons.push([Markup.button.callback(priceText, `btn_oca_price_${key}`)]);
     }
     if (pkg.comparison) {
-        let compareText = 'Perbandingan Paket Interaction';
-        if (key === 'blast') compareText = 'Perbandingan Paket Blast';
+        let compareText = 'Perbandingan Paket';
+        if (key === 'blast') compareText = 'Perbandingan Paket';
         if (key === 'breach_checker') compareText = 'Poin Keunggulan';
         buttons.push([Markup.button.callback(compareText, `btn_oca_compare_${key}`)]);
     }

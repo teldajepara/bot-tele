@@ -28,9 +28,8 @@ const {
 
 const {
     showEazyMenu,
-    showEazyPackageTypes,
-    showEazyTerms,
-    showEazyPackageDetail
+    showEazyPricing,
+    showEazyCloudPricing
 } = require("./products/eazy");
 
 module.exports = (bot) => {
@@ -70,12 +69,8 @@ module.exports = (bot) => {
     bot.action(/^btn_netmonk_feat_(.+)$/, (ctx) => showNetmonkPackageFeatures(ctx, ctx.match[1]));
 
     // Eazy Cam Actions
-    bot.action("btn_eazy_packages", (ctx) => showEazyPackageTypes(ctx));
-    bot.action("btn_eazy_terms", (ctx) => showEazyTerms(ctx));
-
-    bot.action("btn_eazy_purchase", (ctx) => showEazyPackageDetail(ctx, "purchase"));
-    bot.action("btn_eazy_cloud", (ctx) => showEazyPackageDetail(ctx, "cloud_subscription"));
-    bot.action("btn_eazy_bundling", (ctx) => showEazyPackageDetail(ctx, "bundling_indibiz"));
+    bot.action("btn_eazy_pricing", (ctx) => showEazyPricing(ctx));
+    bot.action("btn_eazy_cloud", (ctx) => showEazyCloudPricing(ctx));
 
     bot.action("btn_cat_prodigi", async (ctx) => {
         const buttons = [
