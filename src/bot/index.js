@@ -21,6 +21,11 @@ function createBot() {
 
   bot.on("text", messageHandler);
 
+  // Global Error Handler
+  bot.catch((err, ctx) => {
+    console.error(`Ooops, encountered an error for ${ctx.updateType}`, err);
+  });
+
   return bot;
 }
 

@@ -1,6 +1,7 @@
 const { GoogleGenAI } = require("@google/genai");
 const { GEMINI_API_KEY } = require("../config");
 const knowledgeData = require("../data/knowledge.js");
+const db = require("../db/database");
 
 // Initialize Gemini
 const genAI = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
@@ -19,25 +20,41 @@ const formatKnowledgeItem = (item) => {
 };
 
 // Helper: Get relevant knowledge based on user query
-const getRelevantContext = (query) => {
+const getRelevantContext = async (query) => {
     const lowerQuery = query.toLowerCase();
 
-    // Find items where at least one keyword is mentioned in the query
+    // 1. Get static data
     const relevantItems = knowledgeData.filter(item => {
         return item.keywords.some(keyword => lowerQuery.includes(keyword.toLowerCase()));
     });
-
-    // If matches found, return only those. 
-    // If no specific matches, return ALL knowledge (fallback context).
     const itemsToUse = relevantItems.length > 0 ? relevantItems : knowledgeData;
+    let context = itemsToUse.map(formatKnowledgeItem).join("\n---\n");
 
-    return itemsToUse.map(formatKnowledgeItem).join("\n---\n");
+    // 2. Append Dynamic Data from Database (Pricing focus)
+    try {
+        const dbContents = await db.getAllContents();
+        if (dbContents && dbContents.length > 0) {
+            context += "\n\n--- DYNAMIC PRICING & UPDATES FROM CMS ---\n";
+            dbContents.forEach(item => {
+                // If query mentions keywords related to this DB item key, put it in context
+                const keyLower = item.key.toLowerCase();
+                const titleLower = item.title.toLowerCase();
+                if (lowerQuery.includes(keyLower.split('_')[0]) || lowerQuery.includes(titleLower.split(' ')[0].toLowerCase())) {
+                    context += `DATA: ${item.title}\nCONTENT: ${item.text}\n\n`;
+                }
+            });
+        }
+    } catch (e) {
+        console.error("Database read error in Gemini Service:", e);
+    }
+
+    return context;
 };
 
 const generateAnswer = async (userQuery) => {
     try {
         // Dynamic Context Construction
-        const relevantContext = getRelevantContext(userQuery);
+        const relevantContext = await getRelevantContext(userQuery);
 
         const SYSTEM_PROMPT = `
 Anda adalah asisten AI internal khusus untuk Tim Sales Telkom Jepara.

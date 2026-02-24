@@ -26,43 +26,13 @@ Rasio Kecepatan 1:1 (Upload:Download)
             name: "Paket Basic",
             slug: "ib_basic",
             image: path.join(__dirname, "../../assets/images/indibiz/basic.jpg"),
-            detail: `
-*Daftar Harga Paket Basic*
-
-• *50 Mbps:* Rp 320.000/bulan
-• *75 Mbps:* Rp 365.000/bulan
-• *100 Mbps:* Rp 440.000/bulan
-• *150 Mbps:* Rp 540.000/bulan
-• *200 Mbps:* Rp 675.000/bulan
-• *300 Mbps:* Rp 950.000/bulan
-
-*Syarat & Ketentuan*
-1. Harga belum termasuk PPN 11%.
-2. Biaya Pasang Baru (PSB) Rp 150.000 dibayarkan di awal saat instalasi.
-3. Layanan khusus untuk segmen bisnis/badan usaha.
-4. Mendapatkan akses ke dashboard Indibiz untuk monitoring layanan.
-`
+            detail: ""
         },
         business: {
             name: "Paket Bisnis",
             slug: "ib_business",
             image: path.join(__dirname, "../../assets/images/indibiz/bisnis.jpg"),
-            detail: `
-*Daftar Harga Paket Bisnis*
-
-• *50 Mbps:* Rp 355.000/bulan
-• *75 Mbps:* Rp 415.000/bulan
-• *100 Mbps:* Rp 535.000/bulan
-• *150 Mbps:* Rp 620.000/bulan
-• *200 Mbps:* Rp 790.000/bulan
-• *300 Mbps:* Rp 1.130.000/bulan
-
-*Syarat & Ketentuan*
-1. Harga belum termasuk PPN 11%.
-2. Biaya Pasang Baru (PSB) Rp 150.000 dibayarkan di awal saat instalasi.
-3. Layanan khusus untuk segmen bisnis/badan usaha.
-4. Mendapatkan akses ke dashboard Indibiz untuk monitoring layanan.
-`
+            detail: ""
         }
     }
 };

@@ -55,23 +55,7 @@ Dashboard terpadu untuk mengelola seluruh social media dalam satu pintu. Diranca
 
 • Report & Insight: Pantau performa agen dan analisis produktivitas melalui laporan yang mudah digunakan.
 `,
-            pricing: `
-*Harga Paket Bundling IndiBiz x OCA Interaction Lite*
-
-• *50 Mbps:* Rp 492.950/bulan
-• *75 Mbps:* Rp 582.950/bulan
-• *100 Mbps:* Rp 692.950/bulan
-• *150 Mbps:* Rp 902.950/bulan
-
-_Add-on OCA Interaction Lite Rp 108.000. Melalui order di SC-ONE dan My Indibiz._
-_Biaya Pasang Baru (PSB) untuk Layanan Indibiz add-on sebesar Rp 0._
-
-*Syarat & Ketentuan*
-1. Biaya belum termasuk PPN.
-2. Paket aktif / dapat diorder untuk seluruh Regional.
-3. Registrasi dilakukan melalui SC One, NCX EBIS, Landing Page Creator EBIS, atau myIndibiz.
-4. Komponen paket tidak dapat diorder terpisah (ala carte), hanya berlaku dalam penawaran bundling.
-`,
+            pricing: "",
             comparison: `
 *Perbandingan Paket OCA Interaction*
 
@@ -139,36 +123,7 @@ Layanan untuk mengirimkan pesan massal (broadcast) ke berbagai saluran komunikas
 
 • Instant Broadcast: Fitur untuk menyebarkan pesan ke ribuan kontak dalam hitungan detik kapan saja dan di mana saja.
 `,
-            pricing: `
-*Harga Paket Bundling IndiBiz x OCA Blast Lite*
-
-HSI Bisnis (HSIE)
-• *50 Mbps:* Rp 668.900/bulan
-• *75 Mbps:* Rp 746.900/bulan
-• *100 Mbps:* Rp 891.900/bulan
-• *150 Mbps:* Rp 1.036.900/bulan
-• *200 Mbps:* Rp 1.261.900/bulan
-• *300 Mbps:* Rp 1.708.900/bulan
-
-HSI Bisnis Basic (HSIEF)
-• *50 Mbps:* Rp 623.900/bulan 
-• *75 Mbps:* Rp 676.900/bulan 
-• *100 Mbps:* Rp 781.900/bulan 
-• *150 Mbps:* Rp 916.900/bulan 
-• *200 Mbps:* Rp 1.094.900/bulan 
-• *300 Mbps:* Rp 1.470.900/bulan 
-
-_Add-on OCA Blast Lite Rp 263.000. Melalui order di SC-ONE and My Indibiz._
-
-*Fitur Basic (Sudah Termasuk):*
-50 Kuota & 5 Template (WhatsApp, SMS, Email), 1 Contact Group, dan 50MB Storage.
-
-*Syarat & Ketentuan*
-1. Biaya belum termasuk PPN.
-2. Paket aktif / dapat diorder untuk seluruh Regional.
-3. Registrasi dilakukan melalui SC One, NCX EBIS, Landing Page Creator EBIS, atau myIndibiz.
-4. Komponen paket tidak dapat diorder terpisah (ala carte), hanya berlaku dalam penawaran bundling.
-`,
+            pricing: "",
             comparison: `
 *Perbandingan Paket OCA Blast*
 
@@ -230,18 +185,7 @@ Layanan notifikasi keamanan untuk mendeteksi apakah email Anda terlibat dalam ke
 
 • Smart Tips: Informasi edukatif berkala untuk mencegah kebocoran data dan memperkuat keamanan akun Anda.
 `,
-            pricing: `
-*Harga Layanan OCA Breaker*
-
-• *Add-on Indibiz:* Rp 35.000 /bulan
-• *OCA Dashboard:* Rp 50.000 /email/bulan
-  _(Harga termasuk pajak: Rp 55.500 /bulan)_
-
-*Mekanisme Layanan:*
-1. Pengecekan pertama H+1 setelah aktivasi, hasil dikirim melalui email.
-2. Pengecekan rutin dilakukan selama masa berlangganan.
-3. Notifikasi kebocoran baru dikirim via Email (30 hari pertama) dan WhatsApp (seterusnya).
-`,
+            pricing: "",
             comparison: `
 *Poin Keunggulan OCA Breaker*
 

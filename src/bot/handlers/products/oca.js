@@ -1,7 +1,8 @@
 const { Markup } = require("telegraf");
 const { replyWithMediaOrText } = require("../../../utils/replyHelper");
+const path = require("path");
 const ocaData = require("../../../data/knowledge/oca");
-
+const db = require("../../../db/database");
 const showOcaMenu = async (ctx) => {
     await ctx.answerCbQuery();
     const buttons = [
@@ -70,11 +71,35 @@ const showOcaPackagePricing = async (ctx, key) => {
     if (!pkg || !pkg.pricing) return ctx.answerCbQuery("Informasi harga tidak ditemukan");
 
     await ctx.answerCbQuery();
+
+    let pricingText = pkg.pricing;
+    let imageData = pkg.pricing_image || pkg.image;
+
+    if (key === 'interaction') {
+        const dbData = await db.getContent('oca_interaction_lite');
+        if (dbData) {
+            pricingText = dbData.text || pricingText;
+            if (dbData.image_path) imageData = path.join(__dirname, '../../../public' + dbData.image_path);
+        }
+    } else if (key === 'blast') {
+        const dbData = await db.getContent('oca_blast_lite');
+        if (dbData) {
+            pricingText = dbData.text || pricingText;
+            if (dbData.image_path) imageData = path.join(__dirname, '../../../public' + dbData.image_path);
+        }
+    } else if (key === 'breach_checker') {
+        const dbData = await db.getContent('oca_breaker');
+        if (dbData) {
+            pricingText = dbData.text || pricingText;
+            if (dbData.image_path) imageData = path.join(__dirname, '../../../public' + dbData.image_path);
+        }
+    }
+
     const buttons = [
         [Markup.button.callback("⬅ Kembali", `btn_oca_${key}`)],
         [Markup.button.callback("Kembali ke OCA", "btn_oca")],
     ];
-    await replyWithMediaOrText(ctx, pkg.pricing, buttons, pkg.pricing_image || pkg.image);
+    await replyWithMediaOrText(ctx, pricingText, buttons, imageData);
 };
 
 const showOcaPackageComparison = async (ctx, key) => {

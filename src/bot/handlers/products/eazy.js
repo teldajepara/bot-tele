@@ -1,6 +1,8 @@
 const { Markup } = require("telegraf");
 const { replyWithMediaOrText } = require("../../../utils/replyHelper");
+const path = require("path");
 const eazyData = require("../../../data/knowledge/eazy");
+const db = require("../../../db/database");
 
 const showEazyMenu = async (ctx) => {
     await ctx.answerCbQuery();
@@ -23,12 +25,15 @@ const showEazyPricing = async (ctx) => {
     const buttons = [
         [Markup.button.callback("⬅ Kembali", "btn_eazy")],
     ];
+    const dbData = await db.getContent('eazy_cam_pricing');
+    const pricingData = dbData ? dbData.text : eazyData.pricing;
+    const imageData = (dbData && dbData.image_path) ? path.join(__dirname, '../../../public' + dbData.image_path) : eazyData.image;
 
     await replyWithMediaOrText(
         ctx,
-        eazyData.pricing,
+        pricingData,
         buttons,
-        eazyData.image
+        imageData
     );
 };
 
@@ -38,12 +43,15 @@ const showEazyCloudPricing = async (ctx) => {
     const buttons = [
         [Markup.button.callback("⬅ Kembali", "btn_eazy")],
     ];
+    const dbData = await db.getContent('eazy_cam_cloud_pricing');
+    const cloudData = dbData ? dbData.text : eazyData.cloud_pricing;
+    const imageData = (dbData && dbData.image_path) ? path.join(__dirname, '../../../public' + dbData.image_path) : eazyData.image;
 
     await replyWithMediaOrText(
         ctx,
-        eazyData.cloud_pricing,
+        cloudData,
         buttons,
-        eazyData.image
+        imageData
     );
 };
 

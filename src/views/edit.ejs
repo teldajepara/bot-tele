@@ -1,0 +1,197 @@
+<%- include('partials/header') %>
+
+    <main class="max-w-4xl w-full mx-auto px-6 py-10 flex-grow">
+
+        <div class="mb-6 flex items-center justify-between">
+            <a href="/"
+                class="text-sm font-semibold text-gray-500 hover:text-red-600 flex items-center gap-1.5 transition-colors bg-white px-3 py-1.5 rounded-lg border border-gray-200 hover:border-red-200">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Kembali ke Daftar
+            </a>
+        </div>
+
+        <section class="glass-panel rounded-2xl border border-gray-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-gray-50 to-white px-8 py-6 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900">
+                    <%= item.title %>
+                </h2>
+            </div>
+
+            <form action="/update" method="POST" enctype="multipart/form-data" class="p-8">
+                <input type="hidden" name="key" value="<%= item.key %>">
+
+                <div class="mb-8 relative group">
+                    <label
+                        class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-red-600 tracking-wider uppercase border border-white rounded-full">
+                        Gambar Saat Ini
+                    </label>
+                    <div
+                        class="w-full px-5 py-5 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center min-h-[160px] text-center">
+                        <% if (item.image_path) { %>
+                            <img src="<%= item.image_path %>" alt="Current Image"
+                                class="max-h-[600px] w-auto rounded-lg border border-gray-200 mb-4">
+                            <span
+                                class="text-xs text-green-600 font-semibold bg-green-50 px-3 py-1.5 rounded-full border border-green-100">🖼️
+                                Custom Image Terupload</span>
+                            <% } else if (defaultImage) { %>
+                                <img src="<%= defaultImage %>" alt="Default Image"
+                                    class="max-h-[600px] w-auto rounded-lg border border-gray-200 mb-4 opacity-90">
+                                <span
+                                    class="text-xs text-gray-500 font-semibold bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">📦
+                                    Gambar Default (Bawaan Bot)</span>
+                                <% } else { %>
+                                    <p class="text-sm text-gray-400 italic">Belum ada gambar preview yang tersedia.</p>
+                                    <% } %>
+                    </div>
+                </div>
+
+                <div class="mb-8 relative group items-center">
+                    <label
+                        class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-red-600 tracking-wider uppercase border border-white rounded-full">
+                        Ganti Gambar (Opsional)
+                    </label>
+                    <input type="file" name="image" accept="image/*"
+                        class="w-full px-5 py-4 bg-white border border-gray-300 rounded-xl focus:ring-0 focus:border-red-500 font-mono text-sm transition-colors hover:border-gray-400 file:border-0 file:bg-red-50 file:text-red-700 file:px-4 file:py-2 file:rounded-lg file:mr-4 file:font-semibold file:cursor-pointer cursor-pointer">
+                </div>
+
+                <div class="mb-8 relative group">
+                    <label
+                        class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-red-600 tracking-wider uppercase border border-white rounded-full">
+                        Konten Markdown
+                    </label>
+                    <textarea name="text" rows="12"
+                        class="w-full px-5 py-5 bg-white border border-gray-300 rounded-xl focus:ring-0 focus:border-red-500 font-mono text-sm leading-relaxed text-gray-700 hover:border-gray-400 transition-colors resize-y"
+                        spellcheck="false"><%= item.text %></textarea>
+                </div>
+
+                <div class="mb-8 relative group">
+                    <label
+                        class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-red-600 tracking-wider uppercase border border-white rounded-full">
+                        Preview (Real-Time markdown format)
+                    </label>
+                    <div id="md-preview"
+                        class="w-full px-5 py-5 min-h-[100px] bg-gray-50 border border-gray-200 rounded-xl text-sm prose prose-sm prose-red max-w-none">
+                        <%- item.htmlPreview %>
+                    </div>
+
+                    <div id="md-warning" class="hidden mt-3 px-4 py-3 bg-red-50 border border-red-200 rounded-lg">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                </path>
+                            </svg>
+                            <div id="md-warning-text" class="text-xs text-red-700 font-medium leading-relaxed"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-3 border-t border-gray-100 pt-6">
+                    <a href="/" id="cancel-btn"
+                        class="bg-white text-gray-600 font-medium py-3 px-6 rounded-xl transition-all border border-gray-300 hover:bg-gray-50">Batalkan</a>
+                    <button type="submit" id="save-btn" disabled
+                        class="bg-gray-900 hover:bg-black text-white font-medium py-3 px-8 rounded-xl transition-all border border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 active:scale-95 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-900">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textarea = document.querySelector('textarea[name="text"]');
+            const fileInput = document.querySelector('input[name="image"]');
+            const previewBox = document.getElementById('md-preview');
+            const warningBox = document.getElementById('md-warning');
+            const warningText = document.getElementById('md-warning-text');
+            const saveBtn = document.getElementById('save-btn');
+            const form = document.querySelector('form');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const backHeaderLink = document.querySelector('a[href="/"]');
+
+            const initialText = textarea.value;
+            let fileChanged = false;
+
+            function checkChanges() {
+                const textChanged = textarea.value !== initialText;
+                if (textChanged || fileChanged) {
+                    saveBtn.disabled = false;
+                } else {
+                    saveBtn.disabled = true;
+                }
+            }
+
+            textarea.addEventListener('input', function () {
+                const text = this.value;
+                let previewText = text || "";
+
+                // Escape HTML tags
+                previewText = previewText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+                // Mimic Telegram Markdown parsing
+                previewText = previewText.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+                previewText = previewText.replace(/_(.*?)_/g, "<em>$1</em>");
+                previewText = previewText.replace(/`(.*?)`/g, "<code class='bg-gray-100 text-red-600 px-1 py-0.5 rounded'>$1</code>");
+
+                // Handle Enters perfectly
+                previewText = previewText.replace(/\n/g, "<br/>");
+
+                // Render Live preview
+                previewBox.innerHTML = previewText;
+
+                let errors = [];
+                // Telegram Markdown rule validation
+                const asterisksLength = (text.match(/\*/g) || []).length;
+                if (asterisksLength % 2 !== 0) errors.push("Simbol bintang (<code>*</code>) tidak ditutup.");
+                const underscoresLength = (text.match(/_/g) || []).length;
+                if (underscoresLength % 2 !== 0) errors.push("Simbol garis bawah (<code>_</code>) tidak ditutup.");
+                const backticksLength = (text.match(/`/g) || []).length;
+                if (backticksLength % 2 !== 0) errors.push("Simbol backtick (<code>`</code>) tidak ditutup.");
+
+                if (errors.length > 0) {
+                    warningBox.classList.remove('hidden');
+                    warningText.innerHTML = "<strong>⚠️ Simbol tidak lengkap:</strong> " + errors.join(" ");
+                } else {
+                    warningBox.classList.add('hidden');
+                }
+
+                checkChanges();
+            });
+
+            fileInput.addEventListener('change', function () {
+                fileChanged = this.files.length > 0;
+                checkChanges();
+            });
+
+            form.addEventListener('submit', function (e) {
+                if (!confirm('Apakah Anda yakin ingin menyimpan perubahan ini?')) {
+                    e.preventDefault();
+                }
+            });
+
+            const handleExit = (e) => {
+                const textChanged = textarea.value !== initialText;
+                if ((textChanged || fileChanged)) {
+                    if (!confirm('Ada perubahan yang belum disimpan. Yakin ingin keluar?')) {
+                        e.preventDefault();
+                    }
+                }
+            };
+
+            cancelBtn.addEventListener('click', handleExit);
+            backHeaderLink.addEventListener('click', handleExit);
+
+            // Initial check
+            textarea.dispatchEvent(new Event('input'));
+        });
+    </script>
+    <%- include('partials/footer') %>

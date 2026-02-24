@@ -1,58 +1,84 @@
-# Telkom Bot Telegram
+# Telkom Jepara Bot Telegram & CMS
 
-A simple Telegram Bot designed to provide information about Telkom Group services.
+A comprehensive Telegram Bot system designed for Telkom Jepara, featuring an AI-powered assistant and a dedicated Admin CMS for real-time content management.
 
-## Features
+## 🌟 Key Features
 
-- Answers inquiries about Telkom products.
-- Auto-response based on keywords.
-- Interactive menus and product details.
-- Logging of user interactions.
+- **AI Assistant (Gemini AI)**: Intelligent responses tailored for Telkom sales teams.
+- **Admin CMS**: Web-based dashboard to manage product pricing, descriptions, and images.
+- **Direct Service Menu**: Interactive buttons for Internet (IndiBiz) and PRODIGI services.
+- **Dynamic Content**: Product info in the bot updates instantly when edited via the CMS.
+- **Smart Validation**: CMS prevents invalid Markdown that could crash the Telegram Bot.
+- **PM2 Support**: Production-ready process management for 24/7 uptime.
 
-## Prerequisites
+## 📋 Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 16 or newer)
-- Telegram Account and Bot Token from [@BotFather](https://t.me/BotFather)
+- [Node.js](https://nodejs.org/) (version 18 or newer recommended)
+- Telegram Bot Token [@BotFather](https://t.me/BotFather)
+- [Google Gemini API Key](https://aistudio.google.com/)
 
-## Installation
+## 🚀 Installation & Setup
 
-1.  Clone this repository or download the source code.
-2.  Navigate to the project directory:
-    ```bash
-    cd telkom-bot-tele
-    ```
-3.  Install dependencies:
-    ```bash
-    npm install
-    ```
+1. **Clone/Download** the repository to your local PC or Server.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Configure Environment**:
+   Create a `.env` file in the root directory:
+   ```env
+   BOT_TOKEN=your_telegram_bot_token
+   ADMIN_ID=your_telegram_numeric_id
+   GEMINI_API_KEY=your_google_gemini_api_key
+   PORT=3000
+   ```
 
-## Configuration
+## 🛠️ Management & Operation
 
-1.  Create a `.env` file in the root folder of the project.
-2.  Add your Telegram Bot Token to the `.env` file:
-    ```env
-    BOT_TOKEN=your_telegram_bot_token_here
-    ADMIN_ID=your_telegram_user_id_here
-    ```
-    *Note: Replace `your_telegram_bot_token_here` with the actual token you received from BotFather.*
+### 1. Running with PM2 (Recommended for Production)
+The app is pre-configured with PM2 to ensure it stays online and auto-restarts on errors.
 
-## Running the Bot
+- **Start Bot & CMS**:
+  ```bash
+  npm start
+  ```
+- **Stop Service**:
+  ```bash
+  npm run stop
+  ```
+- **Restart Service**:
+  ```bash
+  npm run restart
+  ```
+- **View Real-time Logs**:
+  ```bash
+  npx pm2 logs telkom-bot
+  ```
 
-### Development Mode
-Runs the bot using `nodemon` (auto-restarts on file changes, ignores log files):
-```bash
-npm run dev
-```
+### 2. Admin CMS Access
+Once the application is running, open your browser and go to:
+`http://localhost:3000`
 
-### Production Mode
-Runs the bot normally:
-```bash
-npm start
-```
+From here, you can:
+- Update pricing for IndiBiz & PRODIGI.
+- Change product descriptions (Markdown supported).
+- Upload/Replace product images.
+- Preview how the message will look in Telegram.
 
-## Project Structure
+## 📂 Project Structure
 
-- `src/app.js`: Application entry point.
-- `src/bot/handlers/`: Bot message handling logic.
-- `src/data/knowledge/`: Bot knowledge data (IndiHome, IndiBiz, Pijar).
-- `src/data/logs.json`: Activity logs (ignored by git).
+- `src/app.js`: Entry point for both Bot and CMS.
+- `src/bot/`: Telegram Bot logic and handlers.
+- `src/server.js`: Express server for Admin CMS.
+- `src/db/`: SQLite database management.
+- `src/views/`: CMS frontend templates (EJS).
+- `public/uploads/`: Storage for product images.
+- `bot.db`: Main database file (contains your edits).
+
+## 🛡️ Best Practices for Telkom PC Server
+- **Auto-start**: It is recommended to use `pm2 startup` and `pm2 save` to ensure the bot restarts if the PC or Server is rebooted.
+- **Internet**: Ensure the PC has stable internet access to reach Telegram API and Gemini AI API.
+- **Backup**: Regularly back up the `bot.db` file to secure your content updates.
+
+---
+*Created for Telkom Jepara - 2026*
